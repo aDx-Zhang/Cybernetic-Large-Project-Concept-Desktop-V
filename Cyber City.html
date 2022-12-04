@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Cyber City 2055</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <style>
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+@font-face {
+  font-family: s;
+  src: url(./font/Storm\ -\ Trivia\ Grotesk\ R1.otf);
+}
+
+
+body{
+  /* background: repeating-conic-gradient(#0000 .0004% , #000d .0005%),
+  linear-gradient(0deg , rgb(38,19,39) , rgb(26,26,58), black); */
+  background-blend-mode: overlay screen screen;
+  height: 100vh;
+  color: #fff;
+  overflow: hidden;
+  font-family:
+  s;
+  filter: contrast(1.3);
+  background-image: url(./Assets/CyberCity2055/1239331.jpg);
+}
+
+
+.nav-bar-ct{
+  display: flex;
+  align-items: center;
+  padding: 2rem 4rem;
+}
+
+.menu{
+  display: flex;
+  gap: 4rem;
+  flex: 2;
+}
+
+li{
+  list-style: none;
+  text-transform: capitalize;
+}
+
+a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.logo-ct{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.fa-star-of-life{
+  background: linear-gradient(-45deg,#06aab4 , #e82a5d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sides{
+  display: flex;
+  align-items: center;
+  padding: 4rem 0;
+}
+
+
+
+.left-side{
+  width: 50%;
+  padding: 0 5rem;
+}
+.left-side .h1-ct{
+  text-transform: capitalize;
+  font-size: 50px;
+  position: relative;
+  bottom: 27px;
+}
+
+
+.left-side .span-ct{
+  background: linear-gradient(45deg,#00c4cc , #f56702);
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  FONT-VARIANT: all-petite-caps;
+  font-weight: 800;
+  -webkit-text-fill-color: transparent;
+}
+.name{position: relative;text-shadow: 0px 0px 12px black;font-size: 42px;color: aliceblue;font-weight: 800;}
+
+.right-side{
+  width: 50%;
+  margin-left: 150px;
+  /* margin-bottom: 61px; */
+  margin-bottom: 46px;
+}
+
+
+.text-content{
+  max-width: 297px;
+  margin: auto;
+  line-height: 28px;
+}
+
+.btn-ct{
+  border: none;
+  background: #00ffd4a8;
+  outline: none;
+  padding: .5rem 2rem;
+  margin-left: 20px;
+  color: #fff;
+  font-size: 12px;
+  border: 2px solid transparent;
+  border-image: linear-gradient(45deg , rgb(147,58,154) ,
+  rgb(141,227,242) ,rgb(156,33,56));
+  border-image-slice: 1;
+  margin: 1rem 79px;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+
+.btn-ct:hover{
+  transform: scale(1.1);
+}
+
+.fa-arrow-right{
+  margin-left: 10px;
+}
+
+.bottom-box-ct{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  width: 90%;
+  position: relative;
+  margin: auto;
+  /* margin-bottom: 197px; */
+  bottom: 96px;
+}
+
+
+.bottom-box-ct .ring{
+  border: 1px solid #fff;
+  height: 280px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  border-radius: 200px;
+}
+
+
+.bottom-box-ct :first-child{
+  width: 80%;
+}
+
+.bottom-box-ct :nth-child(2){
+  width: 70%;
+}
+
+.bottom-box-ct :nth-child(3){
+  width: 60%;
+  background: linear-gradient( to right , #fd1d1d , #833ab4 , #4cd977 ,
+  rgb(51,66,54)
+  );
+}
+
+.bottom-box-ct :nth-child(3)::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  background-image: url(https://grainy-gradients.vercel.app/noise.svg);
+  background-position: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 200px;
+}
+.bottom-box-ct :nth-child(4){
+  width: 55%;
+  background:  linear-gradient(rgb(0, 110, 255) , transparent) , 
+  linear-gradient(to top left , rgb(195, 0, 255) , transparent),
+  linear-gradient(to top right , rgb(124, 211,134) ,transparent);
+  background-blend-mode: screen;
+
+}
+
+
+.bottom-box-ct :nth-child(4)::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  background-image: url(https://grainy-gradients.vercel.app/noise.svg);
+  background-position: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 200px;
+}
+
+.img-ct{
+  position: absolute;
+  bottom: 1px;
+  left: 23%;
+  max-width: 421px;
+  left: 449px;
+  width: 65%;
+  object-fit: cover;
+}
+
+
+.svg-ct{
+  text-transform:capitalize;
+  transform: scale(.7);
+}
+
+.svg-text{
+  position: relative;
+}
+.svg-one{
+  position: absolute;
+  top: -60px;
+  right: 26%;
+}
+
+
+.svg-two{
+  position: absolute;
+  top: 10px;
+  left: 60%;
+}
+.p-ct{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 21px;
+    text-align-last: center;
+    text-shadow: 0px 0px 20px #171717;
+    font-weight: 800;
+}
+
+
+@media (min-width: 280px) and (max-width: 400px) {
+body{
+  overflow-y: scroll;
+}
+.img-ct {position: absolute;left: 83px;top: 831px;width: 49%;/* padding-bottom: 50px; */}
+
+.logo-ct .name{
+  font-size: 24px;
+  /* width: 100%; */
+}
+.left-side .h1-ct{
+  position: relative;
+  font-size: 32px;
+  font-weight: 900;
+  padding-bottom: 435px;
+  width: 900%;
+}
+.text-content{
+  position: relative;
+  left: -306px;
+  width: 204%;
+  top: 57px;
+}
+
+}
+
+
+@media (min-width: 401px) and (max-width: 540px) {
+.nav-bar-ct{
+  position: relative;
+  /* left: 100px; */
+}
+  .left-side{width: 100%;/* left: 141px; */}
+
+  body{
+  overflow-y: scroll;
+}
+.img-ct {position: absolute;left: 83px;top: 831px;width: 49%;}
+
+.logo-ct .name{
+  font-size: 24px;
+  /* width: 100%; */
+}
+.left-side .h1-ct{
+  position: relative;
+  font-size: 43px;
+  font-weight: 900;
+  /* left: 176px; */
+  width: 100%;
+  padding-bottom: 435px;
+}
+.text-content{
+  position: relative;
+  left: -497px;
+  width: 204%;
+  top: 57px;
+}
+}
+
+@media (min-width: 541px) and (max-width: 660px) {
+
+  body{
+  overflow-y: scroll;
+}
+.img-ct {position: absolute;left: 178px;top: 735px;width: 39%;}
+
+.logo-ct .name{
+  font-size: 24px;
+  /* width: 100%; */
+}
+.left-side .h1-ct{
+  position: relative;
+  font-size: 32px;
+  left: 157px;
+  font-weight: 900;
+  padding-bottom: 435px;
+}
+.text-content{
+  position: relative;
+  left: -265px;
+  width: 204%;
+  top: 57px;
+}
+}
+@media (min-width: 661px) and (max-width: 870px) {
+
+  body{
+  overflow-y: scroll;
+}
+.img-ct {position: absolute;left: 189px;top: 613px;width: 49%;}
+
+.logo-ct .name{
+  font-size: 24px;
+  /* width: 100%; */
+}
+.left-side .h1-ct{
+  position: relative;
+  font-size: 32px;
+  font-weight: 900;
+  left: 190px;
+  padding-bottom: 435px;
+  width: 100%;
+}
+.text-content{
+  position: relative;
+  left: -265px;
+  width: 204%;
+  top: 57px;
+}
+}
+
+@media (min-width: 870px) and (max-width: 1000px) {
+
+  body{
+  overflow-y: scroll;
+}
+.img-ct {position: absolute;left: 278px;top: 600px;width: 39%;}
+
+.logo-ct .name{
+  font-size: 24px;
+  /* width: 100%; */
+}
+.left-side .h1-ct{
+  position: relative;
+  font-size: 32px;
+  font-weight: 900;
+  left: 323px;
+  padding-bottom: 435px;
+}
+.text-content{
+  position: relative;
+  left: -265px;
+  width: 204%;
+  top: 57px;
+}
+}
+
+.textpath1{
+  background: content-box;
+}
+
+.textpath2{
+  color: #171717;
+}
+
+
+/* ********************************Full Page MQ****************************** */
+
+
+
+
+
+/* *************************Media Querry For Galaxy Fold  ************************ */
+ 
+
+@media (min-width: 279px) and (max-width: 281px) {
+  
+}
+
+
+
+/* *************************Media Querry For Iphone SE , Samsung G S8+************************ */
+ 
+
+@media (min-width: 282px) and (max-width: 388px) {
+
+
+}
+
+/* ***********Media Querry For Iphone 12 12 Pro & XR Samsung G S20 Ultra, Samsung A51,************** */
+ 
+
+@media (min-width: 389px) and (max-width: 414px) {
+
+
+}
+
+/* *************************Media Querry For 500 to 501px ************************ */
+ 
+
+@media (min-width: 500px) and (max-width: 501px) {
+
+}
+
+
+/* *************************Media Querry For 502 to 6541 ************************ */
+ 
+
+@media (min-width: 502px) and (max-width: 541px) {
+
+
+}
+
+/* *************************Media Querry For 542 to 600 ************************ */
+ 
+
+@media (min-width: 542px) and (max-width: 600px) {
+
+
+}
+
+
+
+/* *************************Media Querry For 601 to 700 *****f******************* */
+ 
+
+
+@media (min-width: 601px) and (max-width: 700px) {
+
+
+}
+
+
+
+/* *************************Media Querry For 760 to 830 *****f******************* */
+ 
+
+
+@media (min-width: 760px) and (max-width: 830px) {
+
+
+
+}
+
+
+/* *************************Media Querry For 831 to 920 *****f******************* */
+ 
+
+
+@media (min-width: 831px) and (max-width: 920px) {
+
+
+}
+
+
+/* *************************Media Querry For 950px to 1100px *****f******************* */
+ 
+
+
+@media (min-width: 950px) and (max-width: 1100px) {
+
+  .bottom-box-ct {
+    position: relative;
+  }
+
+  .img-ct{
+    position: relative;
+    width: 50%;
+    max-width: 30%;
+    bottom: 202px;
+    left: 357px;
+  }
+
+
+}
+@media (min-width: 1400px) and (max-width: 1500px) {
+
+  .bottom-box-ct {
+    position: relative;
+    top: 5px;
+    display: flex;
+    justify-content: center;
+    align-self: auto;
+  }
+
+  .img-ct{
+    position: fixed;
+    /* width: 50%; */
+    display: flex;
+    /* max-width: 25%; */
+    /* bottom: 143px; */
+    left: 578px;
+    justify-content: center;
+  }
+}
+@media (min-width: 1501px) and (max-width: 1600px) {
+
+.bottom-box-ct {
+  position: relative;
+  top: 5px;
+  display: flex;
+  justify-content: center;
+  align-self: auto;
+}
+
+.img-ct{
+  position: fixed;
+  /* width: 50%; */
+  display: flex;
+  /* max-width: 25%; */
+  /* bottom: 143px; */
+  left: 578px;
+  justify-content: center;
+}
+}
+@media (min-width: 1601px) and (max-width: 1701px) {
+
+.bottom-box-ct {
+  position: relative;
+  top: 5px;
+  display: flex;
+  justify-content: center;
+  align-self: auto;
+}
+
+.img-ct{
+  position: fixed;
+  /* width: 50%; */
+  display: flex;
+  /* max-width: 25%; */
+  /* bottom: 143px; */
+  left: 640px;
+  justify-content: center;
+}
+}
+@media (min-width: 1702px) and (max-width: 1800px) {
+
+.bottom-box-ct {
+  position: relative;
+  top: 5px;
+  display: flex;
+  justify-content: center;
+  align-self: auto;
+}
+
+.img-ct{
+  position: fixed;
+  /* width: 50%; */
+  display: flex;
+  /* max-width: 25%; */
+  /* bottom: 143px; */
+  left: 704px;
+  justify-content: center;
+}
+}
+  @media (min-width: 1200px) and (max-width: 1300px) {
+
+    .bottom-box-ct {
+      position: relative;
+      top: 57px;
+    }
+
+
+
+  }
+
+
+  </style>
+  </head>
+  <body>
+    <header>
+      <nav class="nav-bar-ct">
+        <div class="logo-ct">
+          <i class="fa-solid fa-star-of-life fa-3x"></i>
+          <div class="name">ProjectX By Cybernatic 2055</div>
+        </div>
+<!-- 
+        <ul class="menu">
+          <li><a href="#">about</a></li>
+          <li><a href="#">roadmap</a></li>
+          <li><a href="#">pricing</a></li>
+          <li><a href="#">team</a></li>
+        </ul> -->
+      </nav>
+    </header>
+
+    <div class="conta-ct">
+      <div class="sides">
+        <div class="left-side">
+          <h1 class="h1-ct">
+            unleash the <br />
+            world of <br />
+            <span class="span-ct">Cybernatic's Metaverse</span>
+          </h1>
+        </div>
+        <div class="right-side">
+          <div class="text-content">
+            <p class="p-ct">
+              Cybernatic's Cyber City 2055 is a platform to early ivest in metaverse. Support us so we can achieve our goal.
+            </p>
+            <button class="btn-ct"><a href="./Cyber City 2 Page.html">
+              let's go! <i class="fa-solid fa-arrow-right"></i>
+            </a></button>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="bottom-box-ct">
+          <span class="ring span-ct"></span>
+          <span class="ring span-ct"></span>
+          <span class="ring span-ct"></span>
+          <span class="ring span-ct svg-text">
+            <div class="svg svg-one">
+              <svg
+                height="320px"
+                viewBox="0 0 150 150"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  id="txt1"
+                  fill="none"
+                  d="M150,50A10 10 0 0 1 40,50"
+                  transform="rotate(90, 50 50)"
+                ></path>
+                <text
+                  stroke="#d4d4d4"
+                  dominant-baseline="hanging"
+                  textLength="165"
+                >
+                  <textPath class="textpath1" href="#txt1">prepare your self</textPath>
+                </text>
+              </svg>
+            </div>
+            <div class="svg svg-two">
+              <svg
+                height="320px"
+                viewBox="0 0 150 150"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  id="txt2"
+                  fill="none"
+                  d="M100,50A10 10 0 0 0 10,50"
+                  transform="rotate(90, 50 50)"
+                ></path>
+                <text
+                  stroke="#d4d4d4"
+                  dominant-baseline="hanging"
+                  textLength="130"
+                >
+                  <textPath class="textpath2" href="#txt2">new era is coming</textPath>
+                </text>
+              </svg>
+            </div>
+          </span>
+        </div>
+      </div>
+      <img src="./Assets/CyberCity2055/pngwing.com (3).png" alt="" class="img-ct" />
+    </div>
+  </body>
+</html>

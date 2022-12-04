@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv = "refresh" content = "5; url = ./Registration.html" />
+  <title>Redirecting to Registration</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
+    body {
+      background-color: black;
+    }
+
+    .mainButton {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%);
+    }
+
+    .btn111 {
+      display: inline-block;
+      font-family: "VT323", monospace;
+      border: 1px solid white;
+      color: white;
+      padding: 10px 13px;
+      min-width: 175px;
+      line-height: 1.5em;
+      white-space: no-wrap;
+      transform: uppercase;
+      cursor: pointer;
+    }
+
+    .btn111 .btn222,
+    .btn111 .btn444 {
+      display: inline-block;
+    }
+
+    .btn111 .btn444 {
+      display: inline-block;
+      float: right;
+
+    }
+
+    .btn111:hover,
+    .btn111:focus {
+      animation-name: glitch;
+      animation-duration: 0.2s;
+      background-color: yellow;
+      color: black;
+      border: 1px solid yellow;
+    }
+
+    .btn111:hover .btn333,
+    .btn111:focus .btn333 {
+      animation-name: blink;
+      animation-duration: 0.1s;
+      animation-iteration-count: infinite;
+    }
+
+    .btn111:hover .btn444,
+    .btn111:focus .btn444 {
+      animation-name: blink;
+      animation-duration: 0.1s;
+      animation-iteration-count: infinite;
+    }
+
+    .btn111:hover :before,
+    .btn111:focus :before {
+      content: " ";
+      width: 15px;
+      border: 1px solid black;
+      position: absolute;
+      right: 25%;
+      bottom: 3px;
+      transform: rotate(35deg);
+    }
+
+    .btn111:hover :after,
+    .btn111:focus :after {
+      animation-name: shrink;
+      animation-duration: 0.5s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      content: " ";
+      width: 75%;
+      border: 1px solid black;
+      position: absolute;
+      left: 0;
+      bottom: 5px;
+    }
+
+    .btn111:active {
+      background: none;
+      color: yellow;
+    }
+
+    .btn111:active .btn333 {
+      animation-name: none;
+    }
+
+    .btn111:active .btn444 {
+      animation-name: none;
+    }
+
+    .btn111:active :before,
+    .btn111:active :after {
+      display: none;
+    }
+
+    @keyframes glitch {
+      25% {
+        background-color: red;
+        transform: translateX(-10px);
+        letter-spacing: 10px;
+      }
+
+      35% {
+        background-color: green;
+        transform: translate(10px);
+      }
+
+      59% {
+        opacity: 0;
+      }
+
+      60% {
+        background-color: blue;
+        transform: translate(-10px);
+        filter: blur(5px);
+      }
+
+      100% {
+        background-color: yellow;
+        blur: 5px;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes shrink {
+      100% {
+        width: 10%;
+      }
+    }
+
+    body {
+      background-color: #1e1c22;
+      background-image: url(./Assets/Bg/Glitchy\ Redirect.svg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="mainButton">
+    <a class="btn111" href="./Registration.html">
+      <span class="btn222">// Initialize</span><span class="btn333">_</span><span class="btn444">&rArr;</span>
+    </a>
+  </div>
+
+</body>
+
+</html>

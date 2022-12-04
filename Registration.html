@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Registration</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    display: flex;
+    height: 134vh;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-image: url(./vecteezy_3d-abstract-digital-wave-of-lines-and-wireframe-futuristic_7955926.jpg);
+    }
+
+/* -----Form----- */
+
+
+.container{
+    max-width: 700px;
+    width: 100%;
+    height: 624px;
+    position: absolute;
+    bottom: 324px;
+    font-variant-ligatures: discretionary-ligatures;
+    left: 316px;
+    /* background: #fff; */
+    padding: 25px 30px;
+    border-radius: 21px;
+    background: rgb(0 0 0 / 58%);
+    box-shadow: 0 15px 46px rgb(0 0 0 / 65%);
+    background: rgb(0 0 0 / 58%);
+    box-shadow: 0 15px 46px rgb(0 0 0 / 65%);
+}
+.head{
+    font-size: 26px;
+    color: aliceblue;
+    justify-content: center;
+    font-weight: +900;
+    position: relative;
+    display: flex;
+    left: -16px;
+    bottom: 16px;
+}
+.head::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background-image: url(./vecteezy_3d-abstract-digital-wave-of-lines-and-wireframe-futuristic_7955926.jpg);
+    }
+form .content{
+    display: flex;
+    flex-wrap: wrap;
+    color: aliceblue;
+    margin: 20PX 0 12px 0;
+}
+.content .inputBox{
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+.content .inputBox .AA{
+    font-weight: 800;
+    margin-bottom: 5px;
+    color: aqua;
+    display: block;
+    text-shadow: 0px 0px 39px lawngreen;
+}
+.content .inputBox input{
+    height: 43px;
+    width: 97%;
+    outline: none;
+    border-radius: 8px;
+    padding-left: 15px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+.content .inputBox input:focus,
+.content .inputBox input:valid{
+    border-color: rgb(179, 7, 36);
+}
+
+
+/* ------Gender----- */
+
+
+.radioBox .BB{
+    font-size: 20px;
+    font-weight: 500;
+    color: snow;
+}
+.radioBox .category{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 14px 0;
+    color: aliceblue;
+}
+.radioBox .category label{
+    display: flex;
+    align-items: center;
+
+}
+.radioBox .category .gen{
+    height: 18px;
+    width: 18px;
+    background:  rgb(35, 179, 245);
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+}
+#gen-1:checked~ .category label .one,
+#gen-2:checked~ .category label .two,
+#gen-3:checked~ .category label .three{
+        border-color:  rgb(35, 179, 245);
+        background: #ff2502;
+}
+form input [type="radio"]{
+    display: none;
+}
+
+
+/* ------Button----- */
+
+
+form .btn{
+    height: 45px;
+    margin: 45px 0;
+}
+form .btn input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    background: linear-gradient(135deg, rgb(35, 179, 245),rgb(179, 7, 36));
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 5px;
+}
+form .btn input:hover{
+    background: linear-gradient(-135deg, rgb(35, 179, 245),rgb(179, 7, 36));
+}
+
+/* ----Media Queery---- */
+
+
+@media (min-width: 1500px) and (max-width: 1560px) {
+.container{
+    left: 444px;
+    position: absolute;
+}
+.a001{
+    position: relative;
+}
+}
+
+@media (max-width: 500px) {
+  .az012{
+    position: relative;
+  }
+  .az013{
+    position: relative;
+  }
+  
+    .d1{
+        display: contents;
+    }
+    .az012{
+        position: relative;
+        top: 134px;
+        margin-left: -238px;
+    }
+    .p-goback{
+        position: relative;
+        top: 1047px;
+        margin-left: 84px;
+    }
+    .login-button{
+        position: relative;
+        top: -91px;
+        margin-left: -446px;
+    }
+    form .btn{
+        position: relative;
+    }
+    .container{
+        max-width: 100%;
+        position: relative;
+        overflow-y: scroll;
+        left: 10px;
+        top: -11px;
+}
+.bgvideosub1 .a001{
+    position: relative;
+    left: 79px;
+    top: -21px;
+    font-size: 11px;
+}
+.login-button-div{
+    position: relative;
+    left: -43px;
+    top: 109px;
+}
+.button-div{
+    position: relative;
+    top: 63px;
+    left: 99px;
+}
+.content .inputBox{
+    margin-bottom: 15px;
+    width: 100%;
+}
+.radioBox .category{
+    width: 100%;
+}
+form .content{
+    max-height: 300px;
+    overflow-y: scroll;
+}
+.content::-webkit-scrollbar{
+    width: 0;
+}
+}
+
+
+.bgvideosub1{
+    position: relative;
+    top: 55px;
+    left: -10px;
+}
+
+
+/* **************************Search Here**************************8 */
+
+
+.a001{
+    position: relative;
+    display: inline-block;
+    padding: 16px 38px;
+    margin: 40px 0;
+    color: #03e9f4;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 0px;
+    overflow: hidden;
+    font-weight: 900;
+    left: 524px;
+    top: -281px;
+    font-family: inherit;
+    margin-right: 50px;
+}
+.a001:hover{
+    background: #03e9f4;
+    color: #050801;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+}
+.a001:nth-child(1){
+    filter: hue-rotate(270deg);
+}
+
+.a001 .span001{
+    position: absolute;
+    display: block;
+}
+.a001 .span001:nth-child(1){
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#03e9f4);
+    animation: animate1 1s linear infinite;
+}
+@keyframes animate1{
+    0%{
+        left: -100%;
+    }
+    50%,100%{
+        left: 100%;
+    }
+}
+.a001 .span001:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#03e9f4);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+@keyframes animate2{
+    0%{
+        top: -100%;
+    }
+    50%,100%{
+        top: 100%;
+    }
+}
+.a001 .span001:nth-child(3){
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#03e9f4);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+@keyframes animate3{
+    0%{
+        right: -100%;
+    }
+    50%,100%{
+        right: 100%;
+    }
+}
+
+
+.a001 .span001:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#03e9f4);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+@keyframes animate4{
+    0%{
+        bottom: -100%;
+    }
+    50%,100%{
+        bottom: 100%;
+    }
+}
+
+
+/* ------------------------1st Button---------------------------- */
+
+.login-button {
+  --clr-palwasha: rgb(20, 255, 177);
+  --clr-sohail: hsl(323 21% 16%);
+}
+
+.login-button-div {
+  display: grid;
+  z-index: 5;
+  place-items: center;
+  font-family: "Balsamiq Sans", cursive;
+}
+
+.login-button {
+  font-size: 22px;
+  position: relative;
+  left: 268px;
+  bottom: 350px;
+  z-index: 5;
+  text-decoration: none;
+  color: rgb(244 255 251);
+  border: var(--clr-palwasha) 0.125em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+  box-shadow: inset 0 0 0.5em 0 var(--clr-palwasha), 0 0 0.5em 0 var(--clr-palwasha);
+  position: relative;
+}
+
+
+.login-button::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-palwasha);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.login-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-palwasha);
+  opacity: 0;
+  background-color: var(--clr-palwasha);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.login-button:hover,
+.login-button:focus {
+  color: hsl(0deg 0% 100%);
+  text-shadow: none;
+}
+
+.login-button:hover::before,
+.login-button:focus::before {
+  opacity: 1;
+}
+.login-button:hover::after,
+.login-button:focus::after {
+  opacity: 1;
+}
+
+/* ------------------------1st Button---------------------------- */
+
+.login-button1 {
+  --clr-palwasha:
+  rgb(191 219 57);
+  --clr-sohail:
+  hsl(323 21% 16%);
+}
+
+.login-button1-div {
+  display: grid;
+  z-index: 5;
+  place-items: center;
+  font-family: "Balsamiq Sans", cursive;
+}
+
+.login-button1 {
+  font-size: 22px;
+  bottom: 382px;
+  left: 355px;
+  z-index: 5;
+  text-decoration: none;
+  color: rgb(244 255 251);
+  border: var(--clr-palwasha) 0.125em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+  box-shadow: inset 0 0 0.5em 0 var(--clr-palwasha), 0 0 0.5em 0 var(--clr-palwasha);
+  position: relative;
+}
+
+
+.login-button1::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-palwasha);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.login-button1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-palwasha);
+  opacity: 0;
+  background-color: var(--clr-palwasha);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.login-button1:hover,
+.login-button1:focus {
+  color: hsl(0deg 0% 100%);
+  text-shadow: none;
+}
+
+.login-button1:hover::before,
+.login-button1:focus::before {
+  opacity: 1;
+}
+.login-button1:hover::after,
+.login-button1:focus::after {
+  opacity: 1;
+}
+
+
+
+
+
+
+@media  (max-width: 1000px){
+
+    .myVideo{
+        display: none;
+    }
+    body{
+        background-image: url(./Assets/Videos/a.png);
+        background-size: cover;
+        overflow-y: scroll;
+    }
+
+}
+
+.s1{
+    position: relative;
+}
+.d1{
+    position: absolute;
+    left: 350px;
+    width: 92%;
+    bottom: 305px;
+}
+
+.az012{
+    position: relative;
+}
+
+.p-goback{
+	position: absolute;
+	color: #000;
+	font-size: 85px;
+	cursor: pointer;
+	font-weight: 900;
+	bottom: -217px;
+	font-family: fantasy;
+	left: 57px;
+	height: 100%;
+	/* padding: 28px; */
+}
+.background {
+	position: absolute;
+	height: 90vh;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: -12;
+	}
+  .background {
+	position: absolute;
+	height: 100vh;
+	z-index: -56;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	filter: contrast(6.5);
+	/* backdrop-filter: brightness(25.5); */
+	right: 0;
+	z-index: -34;
+	}
+    </style>
+       
+</head>
+<body>
+
+
+
+    <div class="bgvideosub1">
+        <video width="102%" height="100%"  autoplay muted loop class="myVideo">
+            <source src="./Assets/Registration/reg2.mp4" type="video/mp4">
+          </video>
+    
+    <div class="container">
+        <div class="head">Registration</div>
+        <div >
+            <form class="content">
+                <div class="inputBox">
+                    <span class="AA">Full Name</span>
+                    <input type="text" placeholder="Enter your name" required>
+                </div>
+                <div class="inputBox">
+                    <span class="AA">Username</span>
+                    <input type="text" placeholder="Enter your username" required>
+                </div>
+                <div class="inputBox">
+                    <span class="AA">Email</span>
+                    <input type="email" placeholder="Enter your email" required>
+                </div>
+                <div class="d1">
+                <div class="inputBox s1">
+                    <span class="AA">Phone Number</span>
+                    <input type="number" placeholder="Enter your number" required>
+                </div>
+                <div class="inputBox s1">
+                    <span class="AA">Password</span>
+                    <input type="password" placeholder="Enter your password" required>
+                </div>
+                <div class="inputBox s1">
+                    <span class="AA">Confirm Password</span>
+                    <input type="password" placeholder="Confirm your password" required>
+                </div>
+            </div>
+            <!-- ------Gender----- -->
+
+
+            <div class="radioBox">
+                <input type="radio" name="gender" id="gen-1">
+                <input type="radio" name="gender" id="gen-2">
+                <input type="radio" name="gender" id="gen-3">
+                <span class="BB">Gender</span>
+                <div class="category">
+                    <label for="gen-1">
+                        <span class="gen one"></span>
+                        <span class="gender">Male</span>
+                    </label>
+                    <label for="gen-2">
+                        <span class="gen two"></span>
+                        <span class="gender">Female</span>
+                    </label>
+                    <label for="gen-3">
+                        <span class="gen three"></span>
+                        <span class="gender">Prefer not to say</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- -----Button----- -->
+            
+            <div class="btn">
+                <input type="Submit" value="Register">
+            </div>
+        </div>
+    </div>
+</form>
+
+
+    <!-- ******************************Search Product***************** -->
+<a class="a001" href="./Index.html">
+    <span class="span001"></span>
+    <span class="span001"></span>
+    <span class="span001"></span>
+    <span class="span001"></span>
+    Go Back To Home Page
+  </a>
+
+
+<!-- *************************login Button************************8 -->
+
+          <div class="login-button-div">
+            <a href="./Login Redefined.html" class="login-button az013">Login</a>
+            </div>
+<!-- *************************Signup Button************************8 -->
+
+            <div class="button-div1">
+                <a href="./Signup Redefined.html" class="login-button1 az012">Signup</a>
+            </div>
+			<div class="p-goback" onclick="pageRedirect()">←</div>
+
+            <canvas class="background"></canvas>
+
+</div>
+
+<script src='https://code.jquery.com/jquery-1.11.0.min.js'></script>
+<script src='https://code.jquery.com/jquery-migrate-1.2.1.min.js'></script>
+<script>
+
+window.onload = function () {
+  Particles.init({
+    selector: ".background"
+  });
+};
+const particles = Particles.init({
+  selector: ".background",
+  color: ["#03dac6", "#ff0266", "#000000"],
+  connectParticles: true,
+  responsive: [
+    {
+      breakpoint: 768,
+      options: {
+        color: ["#faebd7", "#03dac6", "#ff0266"],
+        maxParticles: 43,
+        connectParticles: false
+      }
+    }
+  ]
+});
+
+function pageRedirect() {
+      window.location.href = "./Index.html";
+    }     
+
+</script>
+</body>
+</html>

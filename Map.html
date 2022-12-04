@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Our Location</title>
+    <style>
+
+body{
+    overflow: hidden;
+    background-image: url(./Assets/PageImages/3.jpg);
+    background-size: cover;
+}
+.img01{
+    position: relative;
+    width: 102%;
+    z-index: -2;
+    left: -8px;
+    filter: brightness(0.5);
+    bottom: 691px;
+}
+
+.map{
+    box-shadow: 3px -4px 66px #000fffa3;
+    width: 58.8%;
+    position: relative;
+    top: 83px;
+    left: 280px;
+}
+
+button {
+  margin: 2px;
+}
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+.map{
+  display: flex;
+  /* flex-direction: row; */
+  /* flex-wrap: nowrap; */
+  /* align-content: space-around; */
+  justify-content: center;
+  /* align-items: flex-end; */
+}
+
+/* 5 */
+.btn-5 {
+  width: 166px;
+  height: 40px;
+  line-height: 42px;
+  right: -600px;
+  bottom: -29px;
+  padding: 0;
+  border: none;
+  background: rgb(204 0 255);
+  background: linear-gradient(0deg, rgb(0 126 255) 0%, rgb(33 78 76) 100%);
+}
+.btn-5:hover {
+  color: #f0094a;
+  background: transparent;
+   box-shadow:none;
+}
+.btn-5:before,
+.btn-5:after{
+  content:
+  '';
+  position:
+  absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #cc09f0;
+  box-shadow:
+   -1px -1px 5px 0px #fff,
+   7px 7px 20px 0px #0003,
+   4px 4px 5px 0px #0002;
+  transition:400ms ease all;
+}
+.btn-5:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn-5:hover:before,
+.btn-5:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+.buttondiv{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  align-items: center;
+}
+button{
+  display: flex;
+}
+
+    </style>
+</head>
+<body>
+  <div class="buttondiv">
+    <button class="custom-btn btn-5"><span>Go Back To Home Page</span></button></div>
+
+    <div class="map">
+
+        <iframe class="a010101" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3223.0690657416335!2d67.04528848401415!3d24.939812767446618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f3daae54d55%3A0x5dae2a3a4b71f12a!2sAptech%20Learning%20North%20Nazimabad%20II%20Center!5e0!3m2!1sen!2s!4v1659958988833!5m2!1sen!2s" width="800" height="480" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    </div>
+<img class="img01" src="./Assets/PageImages/3.jpg" alt="">
+</body>
+</html>

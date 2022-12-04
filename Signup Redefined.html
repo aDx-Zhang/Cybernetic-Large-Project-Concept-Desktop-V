@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+		<title>Signup Cybernatic</title>
+<style>
+
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+
+.background {
+	position: absolute;
+	height: 90vh;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: auto;
+  }
+  .background {
+	position: absolute;
+	height: 100vh;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	filter: contrast(6.5);
+	/* backdrop-filter: brightness(25.5); */
+	right: 0;
+	z-index: 0;
+	}
+  
+* {
+	box-sizing: border-box;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	/* background: linear-gradient(45deg, #160092, #9803d3, #e945c6, #ff5e52, #ffe552); */
+	background-size: 600% 100%;
+	animation: gradient 7s linear infinite;
+	animation-direction: alternate;
+	background-color: black;
+}
+body {
+	font-family: "Open Sans", sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* min-height: 100vh; */
+	margin: 0;
+	overflow: hidden;
+}
+
+.container {
+	position: absolute;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+	z-index: 20;
+}
+
+#form {
+	background: rgb(0 0 0 / 40%);
+	padding: 5em;
+	width: 688px;
+	border-radius: 20px;
+	border-left: 1px solid rgba(255, 255, 255, 0.4);
+	border-top: 1px solid rgba(255, 255, 255, 0.4);
+	border-right: 1px solid rgba(255, 255, 255, 0.4);
+	-webkit-backdrop-filter: blur(3px);
+	backdrop-filter: blur(3px);
+	box-shadow: 0px -41px 43px 1px rgb(255 255 255 / 16%);
+	text-align: center;
+	position: relative;
+	-webkit-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+::placeholder {
+	font-weight: 100;
+	font-size: 19px;
+	opacity: 0.7;
+	font-variant: small-caps;
+	color: #fff;
+}
+
+.form {
+	padding: 30px 40px;
+}
+
+.form-control {
+	margin-bottom: 10px;
+	padding-bottom: 20px;
+	position: relative;
+}
+
+.form-control input {
+	font-size: 21px;
+	letter-spacing: 1.5px;
+	background: black;
+	width: 77%;
+	padding: 1em;
+	margin-bottom: 0.25em;
+	margin-top: 0.25em;
+	border: none;
+	border-left: 1px solid rgb(255 255 255);
+	border-top: 1px solid rgb(255 255 255);
+	/* border-radius: 50px; */
+	-webkit-backdrop-filter: blur(5px);
+	backdrop-filter: blur(27px);
+	filter: contrast(4.5);
+	box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	font-weight: 600;
+	-webkit-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.form-control input:focus {
+	background: rgba(255, 255, 255, 0.15);
+	box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form-control.success input {
+	border-color: #00ff6a;
+	border: 5px solid #00ff6a;
+}
+
+.form-control input:hover {
+	background: rgba(255, 255, 255, 0.3);
+	box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+}
+
+.form-control.error input {
+	border-color: #ff1c02;
+	border: 5px solid #ff1c02;
+	font-size: 20px;
+}
+
+.form-control small {
+	color: #fff;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	visibility: hidden;
+}
+
+.form-control.error small {
+	visibility: visible;
+	font-size: 13px;
+	width: 100%;
+}
+
+.form button {
+	cursor: pointer;
+	/* font-size: 18px; */
+	letter-spacing: 2px;
+	background: transparent;
+	margin-top: 0.25em;
+	width: 100%;
+	height: 65px;
+	padding: 1em;
+	margin-bottom: 0.25em;
+	border: none;
+	border-left: 1px solid rgba(255, 255, 255, 0.3);
+	border-top: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: 50px;
+	-webkit-backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
+	box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 700;
+	-webkit-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+	outline: none;
+}
+
+.form button:hover {
+	background-color: #000;
+	border: 1px solid #fffdfd;
+	color: #fff;
+	cursor: pointer;
+}
+
+.form button:active {
+	background-color: #000;
+	box-shadow: 0 12px 12px 0 rgba(112, 112, 112, 0.37);
+	transform: translateY(5px);
+}
+
+h2 {
+	text-align: center;
+	font-weight: 600;
+	color: #fff;
+	opacity: 0.8;
+	font-size: 2rem;
+	margin-top: 0;
+	font-family: sans-serif;
+	margin-bottom: 30px;
+	letter-spacing: 1.5px;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0%;
+	}
+	100% {
+		background-position: 100%;
+	}
+}
+
+.drop {
+	background: rgba(255, 255, 255, 0.06);
+	-webkit-backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
+	border-radius: 10px;
+	border-left: 1px solid rgba(255, 255, 255, 0.3);
+	border-top: 1px solid rgba(255, 255, 255, 0.3);
+	box-shadow: 10px 10px 60px -8px rgba(0, 0, 0, 0.2);
+	position: absolute;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+	animation: animate 10s linear infinite;
+	animation-delay: calc(-2s * var(--i));
+}
+
+@keyframes animate {
+	0%,
+	100% {
+		transform: translateY(-40px);
+	}
+	50% {
+		transform: translateY(40px);
+	}
+}
+
+.drop-1 {
+	height: 200px;
+	display: none;
+	width: 200px;
+	top: -100px;
+	left: -120px;
+	z-index: -1;
+	border-radius: 500px;
+}
+.drop-2 {
+	height: 110px;
+	width: 110px;
+	bottom: -90px;
+	display: none;
+	right: -50px;
+	border-radius: 500px;
+}
+.drop-3 {
+	height: 70px;
+	display: none;
+	width: 350px;
+	bottom: 170px;
+	right: -200px;
+	z-index: -1;
+	transform: rotate(-45deg);
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+	outline: 3px solid #fff;
+}
+
+.github-corner:focus svg path {
+	fill:  #000;
+}
+
+.github-corner:focus .octo-arm,
+.github-corner:focus .octo-body {
+	fill: #fff;
+}
+
+.github-corner:hover .octo-arm,
+.github-corner:focus .octo-arm {
+	animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+	0%,
+	100% {
+		transform: rotate(0);
+	}
+	20%,
+	60% {
+		transform: rotate(-25deg);
+	}
+	40%,
+	80% {
+		transform: rotate(10deg);
+	}
+}
+
+@media (max-width: 500px) {
+	.github-corner:hover .octo-arm {
+		animation: none;
+	}
+	.github-corner .octo-arm {
+		animation: octocat-wave 560ms ease-in-out;
+	}
+}
+
+@media (max-width: 500px) {
+	.github-corner {
+		display: none;
+	}
+
+	#form {
+		width: 300px;
+		height: 400px;
+		padding: 5%;
+	}
+
+	.form-control {
+		margin-bottom: 6px;
+		padding-bottom: 12px;
+	}
+
+	.form button,
+	.form-control input {
+		width: 96%;
+		padding: 0.5em;
+		font-size: 16px;
+	}
+
+	.form button {
+		height: 40px;
+	}
+
+	h2 {
+		font-size: 20px;
+		margin: 10px 0 20px;
+	}
+}
+
+
+/* ******************** Title Glitch effect ********************************** */
+
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  bottom: 25px;
+}
+
+#h101 {
+  font-family: revert;
+  font-size: 35px;
+  text-transform: uppercase;
+}
+
+.glitch {
+  position: relative;
+  color: #fff;
+  mix-blend-mode: lighten;
+}
+.glitch:before, .glitch:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  /* background: black; */
+  clip: rect(0, 0, 0, 0);
+}
+.glitch:before {
+  left: -1px;
+  text-shadow: 1px 0 rgba(255, 0, 0, 0.7);
+}
+.glitch:after {
+  left: 1px;
+  text-shadow: -1px 0 rgba(0, 0, 255, 0.7);
+}
+.glitch.is-glitching:before {
+  text-shadow: 4px 0 rgba(255, 0, 0, 0.7);
+  animation: glitch-1 0.8s infinite ease-in-out alternate-reverse;
+}
+.glitch.is-glitching:after {
+  text-shadow: -5px 0 rgba(0, 0, 255, 0.7);
+  animation: glitch-2 0.8s infinite ease-in-out alternate-reverse;
+}
+
+@keyframes glitch-1 {
+  0% {
+    clip: rect(36px, 9999px, 9px, 0);
+  }
+  25% {
+    clip: rect(25px, 9999px, 99px, 0);
+  }
+  50% {
+    clip: rect(50px, 9999px, 102px, 0);
+  }
+  75% {
+    clip: rect(30px, 9999px, 92px, 0);
+  }
+  100% {
+    clip: rect(91px, 9999px, 98px, 0);
+  }
+}
+@keyframes glitch-2 {
+  0% {
+    top: -1px;
+    left: 1px;
+    clip: rect(65px, 9999px, 119px, 0);
+  }
+  25% {
+    top: -6px;
+    left: 4px;
+    clip: rect(79px, 9999px, 19px, 0);
+  }
+  50% {
+    top: -3px;
+    left: 2px;
+    clip: rect(68px, 9999px, 11px, 0);
+  }
+  75% {
+    top: 0px;
+    left: -4px;
+    clip: rect(95px, 9999px, 53px, 0);
+  }
+  100% {
+    top: -1px;
+    left: -1px;
+    clip: rect(31px, 9999px, 149px, 0);
+  }
+}
+
+
+.p-goback{
+	position: absolute;
+	color: #fff;
+	font-size: 85px;
+	cursor: pointer;
+	font-weight: 900;
+	bottom: -310px;
+	left: -210px;
+	height: 100%;
+	/* padding: 28px; */
+}
+
+</style>
+	</head>
+
+	<body>
+
+
+		<div class="container">
+			<form id="form" autocomplete="off" class="form">
+                <h1 id="h101" class="glitch is-glitching" data-text="Cybernetic 2055's Signup">Cybernetic 2055's Signup</h1>
+				<div class="form-control">
+					<!-- <label for="username">Username</label> -->
+					<input type="text" id="username" placeholder="enter username" />
+					<small>Error Message</small>
+				</div>
+				<div class="form-control">
+					<!-- <label for="email">Email</label> -->
+					<input type="text" id="email" placeholder="enter email" />
+					<small>Error Message</small>
+				</div>
+				<div class="form-control">
+					<!-- <label for="password">Password</label> -->
+					<input type="password" id="password" placeholder="enter password" />
+					<small>Error Message</small>
+				</div>
+				<div class="form-control">
+					<!-- <label for="password2">Confirm Password</label> -->
+					<input type="password" id="password confirmation" placeholder="confirm password" />
+					<small>Error Message</small>
+				</div>
+				<button type="submit">Submit</button>
+			</form>
+			<div class="p-goback" onclick="pageRedirect()">←</div>
+
+			<div class="drops">
+				<div class="drop drop-1" style="--i: 0"></div>
+				<div class="drop drop-2" style="--i: 1"></div>
+				<div class="drop drop-3" style="--i: 2"></div>
+				<div class="drop drop-4" style="--i: 3"></div>
+				<div class="drop drop-5" style="--i: 4"></div>
+			</div>
+		</div>
+
+		<canvas class="background"></canvas>
+		<script src='https://code.jquery.com/jquery-1.11.0.min.js'></script>
+		<script src='https://code.jquery.com/jquery-migrate-1.2.1.min.js'></script>
+<script>
+
+
+
+window.onload = function () {
+  Particles.init({
+    selector: ".background"
+  });
+};
+const particles = Particles.init({
+  selector: ".background",
+  color: ["#03dac6", "#ff0266", "#000000"],
+  connectParticles: true,
+  responsive: [
+    {
+      breakpoint: 768,
+      options: {
+        color: ["#faebd7", "#03dac6", "#ff0266"],
+        maxParticles: 43,
+        connectParticles: false
+      }
+    }
+  ]
+});
+
+
+
+
+
+function pageRedirect() {
+      window.location.href = "./Index.html";
+    }     
+
+
+
+
+
+// if/else validations first
+const form = document.getElementById("form");
+const username = document.getElementById("username");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const password2 = document.getElementById("password confirmation");
+
+// Show input error message
+function showError(input, message) {
+	const formControl = input.parentElement;
+	formControl.className = "form-control error";
+	const small = formControl.querySelector("small");
+	small.innerText = message;
+}
+
+// Show success outline
+function showSuccess(input) {
+	const formControl = input.parentElement;
+	formControl.className = "form-control success";
+}
+
+// Check email is valid
+function checkEmail(input) {
+	const re =
+		/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	if (re.test(input.value.trim())) {
+		showSuccess(input);
+	} else {
+		showError(input, "Email is not valid or incomplete");
+	}
+}
+
+// Check required fields
+function checkRequired(inputArr) {
+	inputArr.forEach(function (input) {
+		if (input.value.trim() === "") {
+			showError(input, `${getFieldName(input)} is required`);
+		} else {
+			showSuccess(input);
+		}
+	});
+}
+
+// Check input length
+function checkLength(input, min, max) {
+	if (input.value.length < min) {
+		showError(input, `${getFieldName(input)} must be at least ${min} characters`);
+	} else if (input.value.length > max) {
+		showError(input, `${getFieldName(input)} must be less than ${max} characters`);
+	} else {
+		showSuccess(input);
+	}
+}
+
+// Check passwords match
+function checkPasswordsMatch(input1, input2) {
+	if (input1.value !== input2.value) {
+		showError(input2, "Passwords do not match");
+	}
+}
+
+// Get field name and capitalize only the first letter
+function getFieldName(input) {
+	return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+}
+
+// Refactored validations
+form.addEventListener("submit", function (e) {
+	e.preventDefault();
+
+	checkRequired([username, email, password, password2]);
+	checkLength(username, 4, 15);
+	checkLength(password, 6, 25);
+	checkEmail(email);
+	checkPasswordsMatch(password, password2);
+	// document.getElementById("form").reset();
+});
+
+function swRegistration() {
+	const heart = [""]
+	if ("serviceWorker" in navigator) {
+		navigator.serviceWorker
+			.register("", {
+				scope: "",
+			})
+			.then(function (registration) {
+				console.log();
+			})
+			.catch(function (err) {
+				console.log(err);
+			});
+	}
+}
+
+function consoleText() {
+	console.clear();
+
+	console.log();	console.log();	console.log();	console.log();	console.log();
+}
+
+swRegistration();
+consoleText();
+
+
+</script>
+	</body>
+
+</html>
+

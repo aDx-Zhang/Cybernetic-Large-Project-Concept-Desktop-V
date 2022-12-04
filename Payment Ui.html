@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Cybernatic Payments</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css'><link rel="stylesheet" href="./style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+<style>
+
+body {
+  color: #28333b;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1em;
+  padding: 0px 25px;
+  overflow-x: hidden;
+  background: linear-gradient(black,#000000);
+  background-size: 900px 900px;
+}
+body a {
+  color: #28333b;
+  text-decoration: none;
+  /* border-bottom: 2px solid rgba(64,179,255,0.5); */
+  opacity: 0.75;
+  transition: all 0.5s ease;
+}
+body a:hover {
+  border-bottom: 2px solid #40b3ff;
+  opacity: 1;
+}
+.field {
+  margin-bottom: 25px;
+}
+.field.full {
+  width: 100%;
+}
+.field.half {
+  width: calc(50% - 12px);
+}
+.field label {
+  display: block;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+.field input {
+  padding: 12px;
+  border-radius: 6px;
+  border: 2px solid #e8ebed;
+  display: block;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.field input:placeholder {
+  color: #e8ebed !important;
+}
+.flex {
+  display: flex;
+  flex-direction: row wrap;
+  align-items: center;
+}
+.flex.justify-space-between {
+  justify-content: space-between;
+}
+.card {
+  padding: 50px;
+  margin: 38px auto;
+  max-width: 850px;
+  position: absolute;
+  background: rgb(0 0 0);
+  z-index: 10;
+  bottom: -321px;
+  left: 278px;
+  border-radius: 25px;
+  box-sizing: border-box;
+  box-shadow: 0px -4px 40px -2px #3fefef;
+}
+.card .container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.card .card-title {
+  margin-bottom: 50px;
+}
+.card .card-title h2 {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+  font-weight: 900;
+  color: aliceblue;
+  font-size: 33px;
+  text-shadow: 0px 0px 16px #7d7777;
+}
+.card .card-body .payment-type,
+.card .card-body .payment-info {
+  margin-bottom: 25px;
+}
+.card .card-body .payment-type h4 {
+  margin: 0;
+  color: aliceblue;
+}
+.card .card-body .payment-type .types {
+  margin: 25px 0;
+}
+.card .card-body .payment-type .types .type {
+  width: 30%;
+  position: relative;
+  background: #f7faff;
+  border: 2px solid #e8ebed;
+  padding: 25px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  cursor: pointer;
+  color: aliceblue;
+  text-align: center;
+  transition: all 0.5s ease;
+}
+.card .card-body .payment-type .types .type:hover {
+  border-color: #28333b;
+}
+.card .card-body .payment-type .types .type:hover .logo,
+.card .card-body .payment-type .types .type:hover p {
+  color: #28333b;
+}
+.card .card-body .payment-type .types .type.selected {
+  border-color: #40b3ff;
+  background: rgb(255 255 255);
+}
+.card .card-body .payment-type .types .type.selected .logo {
+  color: #40b3ff;
+}
+.card .card-body .payment-type .types .type.selected p {
+  color: #28333b;
+}
+.card .card-body .payment-type .types .type.selected::after {
+  content: '\f00c';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  top: -21px;
+  right: -21px;
+  background: #000;
+  border: 2px solid #40b3ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card .card-body .payment-type .types .type .logo,
+.card .card-body .payment-type .types .type p {
+  transition: all 0.5s ease;
+}
+.card .card-body .payment-type .types .type .logo {
+  font-size: 48px;
+  color: #8a959c;
+}
+.card .card-body .payment-type .types .type p {
+  margin-bottom: 0;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #8a959c;
+}
+.card .card-body .payment-info .column {
+  width: calc(50% - 25px);
+}
+.card .card-body .payment-info .title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.card .card-body .payment-info .title .num {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  border: 2px solid #40b3ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-right: 12px;
+  font-size: 12px;
+}
+footer {
+  margin: 50px auto;
+  max-width: 850px;
+  text-align: center;
+}
+.button {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  padding: 15px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background: transparent;
+  border: 2px solid transparent;
+}
+.button.button-link {
+  padding: 0 0 2px;
+  margin: 0 25px;
+  border-radius: 0;
+  opacity: 0.75;
+}
+.button.button-link:hover {
+  opacity: 1;
+}
+.button.button-primary {
+  background: #40b3ff;
+  color: #fff;
+}
+.button.button-primary:hover {
+  background: #218fd9;
+}
+.button.button-secondary {
+  background: transparent;
+  border-color: #e8ebed;
+  color: #8a959c;
+}
+.button.button-secondary:hover {
+  border-color: #28333b;
+  color: #28333b;
+}
+
+.scanner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 12px;
+}
+
+.scanner .fingarprint {
+    position: relative;
+    width: 300px;
+    height: 380px;
+    background: url(./Assets/PaymentUI/image1.png);
+    background-size: 300px;
+}
+
+.scanner .fingarprint::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(./Assets/PaymentUI/image2.png);
+    background-size: 300px;
+    animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate {
+    0%,
+    100% {
+        height: 0%;
+    }
+    50% {
+        height: 100%;
+    }
+}
+
+.scanner .fingarprint::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: #3fefef;
+    border-radius: 8px;
+    filter: drop-shadow(0 0 20px #3fefef) drop-shadow(0 0 60px #3fefef);
+    animation: animate_line 4s ease-in-out infinite;
+}
+
+@keyframes animate_line {
+    0%,
+    100% {
+        top: 0%;
+    }
+    50% {
+        top: 100%;
+    }
+}
+
+.scanner h4 {
+    text-transform: uppercase;
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    color: #3fefef;
+    filter: drop-shadow(0 0 20px #3fefef) drop-shadow(0 0 60px #3fefef);
+    animation: animate_text 0.5s steps(1) infinite;
+}
+
+@keyframes animate_text {
+    0%,
+    100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.img1{
+	width: 40%;
+}
+.myVideo{
+  filter: contrast(2.5);
+  z-index: -5;
+  position: relative;
+  width: 134%;
+  left: -28px;
+  height: 106%;
+}
+.button-primary{
+  position: relative;
+  bottom: 17px;
+  left: -8px;
+  font-family: 'DM Sans';
+}
+.button-secondary{
+  position: relative;
+  left: 155px;
+  width: 167%;
+  top: 124px;
+}
+.button-link{position: relative;top: 304px;color: aliceblue;width: 90%;}
+.a86{
+  text-decoration: none;
+  color: aqua;
+}
+.d25{
+  text-decoration: none;
+  color: #e8ebed;
+}
+
+.background {
+	position: absolute;
+	height: 90vh;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: auto;
+  }
+  .background {
+	position: absolute;
+	height: 100vh;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	filter: contrast(6.5);
+	/* backdrop-filter: brightness(25.5); */
+	right: 0;
+	z-index: 0;
+	}
+
+
+
+
+
+
+
+
+
+/* ********************************Full Page MQ****************************** */
+
+
+
+
+
+/* *************************Media Querry For Galaxy Fold  ************************ */
+ 
+
+
+  @media (min-width: 279px) and (max-width: 281px){
+    
+    .scanner{
+      position: relative;
+      left: -45px;
+    }
+.card{
+  position: absolute;
+  left: -3px;
+  height: 1515px;
+  top: -7px;
+  max-width: 697px;
+}
+
+.types{display: flex;position: relative;flex-direction: column;left: -165px;}
+
+.card .card-title h2{
+  text-align-last: center;
+  font-size: 19px;
+  margin-right: 340px;
+}
+
+.card .card-body .payment-type h4{
+  position: relative;
+  bottom: 10px;
+  left: -24px;
+}
+
+.card-actions{
+  left: -449px;
+  top: 348px;
+  position: relative;
+}
+
+.button-primary{
+  width: 250%;
+}
+.d25{
+  position: relative;
+  bottom: 45px;
+  left: 53px;
+}
+}
+
+
+
+/* *************************Media Querry For Iphone SE , Samsung G S8+************************ */
+ 
+
+@media (min-width: 282px) and (max-width: 388px) {
+
+  .card{
+    position: absolute;
+    left: -3px;
+    height: 1515px;
+    top: -7px;
+    max-width: 697px;
+  }
+
+  .types{display: flex;position: relative;flex-direction: column;left: -117px;}
+
+  .card .card-title h2{
+    text-align-last: center;
+    font-size: 29px;
+    margin-right: 241px;
+  }
+
+  .card .card-body .payment-type h4{
+    position: relative;
+    bottom: 10px;
+    left: 20px;
+
+  }
+
+  .card-actions{
+    left: -408px;
+    top: 348px;
+    position: relative;
+  }
+
+  .button-primary{
+    width: 250%;
+  }
+  .d25{
+    position: relative;
+    bottom: 45px;
+    left: 53px;
+  }
+}
+
+/* ***********Media Querry For Iphone 12 12 Pro & XR Samsung G S20 Ultra, Samsung A51,************** */
+ 
+
+@media (min-width: 389px) and (max-width: 414px) {
+  .scanner{
+    position: relative;
+    left: -48px;
+  }
+  .card{
+    position: absolute;
+    left: -3px;
+    height: 1515px;
+    top: -7px;
+  }
+
+  .types{display: flex;position: relative;flex-direction: column;left: -168px;}
+
+  .card .card-title h2{
+    text-align-last: center;
+    font-size: 22px;
+    margin-right: 303px;
+    position: relative;
+    left: -13px;
+  }
+
+  .card .card-body .payment-type h4{
+    position: relative;
+    bottom: 10px;
+    left: -29px;
+  }
+
+  .card-actions{
+    left: -456px;
+    top: 348px;
+    position: relative;
+  }
+
+  .button-primary{
+    width: 250%;
+  }
+  .d25{
+    position: relative;
+    bottom: 45px;
+    left: 53px;
+  }
+
+}
+
+/* *************************Media Querry For 500 to 501px ************************ */
+ 
+
+@media (min-width: 500px) and (max-width: 501px) {
+  .card{
+    position: absolute;
+    left: -3px;
+    height: 1515px;
+    top: -7px;
+  }
+
+  .types{display: flex;position: relative;flex-direction: column;left: -117px;}
+
+  .card .card-title h2{
+    text-align-last: center;
+    font-size: 29px;
+    margin-right: 241px;
+  }
+
+  .card .card-body .payment-type h4{
+    position: relative;
+    bottom: 10px;
+    left: 20px;
+
+  }
+
+  .card-actions{
+    left: -408px;
+    top: 348px;
+    position: relative;
+  }
+
+  .button-primary{
+    width: 250%;
+  }
+  .d25{
+    position: relative;
+    bottom: 45px;
+    left: 53px;
+  }
+}
+
+
+/* *************************Media Querry For 502 to 6541 ************************ */
+ 
+
+@media (min-width: 502px) and (max-width: 541px) {
+  .scanner{
+    position: relative;
+    left: 65px;
+  }
+  .card{
+    position: absolute;
+    left: -3px;
+    height: 1306px;
+    top: -7px;
+  }
+
+  .types{/* display: flex; */position: relative;/* flex-direction: column; */left: -43px;}
+
+  .card .card-title h2{
+    text-align-last: center;
+    font-size: 29px;
+    margin-right: 62px;
+  }
+
+  .card .card-body .payment-type h4{
+    position: relative;
+    bottom: 10px;
+    display: flex;
+    /* left: 20px; */
+    justify-content: center;
+  }
+
+  .card-actions{
+    left: -334px;
+    top: 348px;
+    position: relative;
+  }
+
+  .button-primary{
+    width: 250%;
+  }
+  .d25{
+    position: relative;
+    bottom: 45px;
+    left: 53px;
+  }
+
+}
+
+/* *************************Media Querry For 542 to 600 ************************ */
+ 
+
+@media (min-width: 542px) and (max-width: 600px) {
+  .card{
+    position: absolute;
+    left: -3px;
+    height: 1515px;
+    top: -7px;
+  }
+
+  .types{display: flex;position: relative;flex-direction: column;left: -117px;}
+
+  .card .card-title h2{
+    text-align-last: center;
+    font-size: 29px;
+    margin-right: 241px;
+  }
+
+  .card .card-body .payment-type h4{
+    position: relative;
+    bottom: 10px;
+    left: 20px;
+
+  }
+
+  .card-actions{
+    left: -408px;
+    top: 348px;
+    position: relative;
+  }
+
+  .button-primary{
+    width: 250%;
+  }
+  .d25{
+    position: relative;
+    bottom: 45px;
+    left: 53px;
+  }
+
+}
+
+
+
+/* *************************Media Querry For 601 to 700 *****f******************* */
+ 
+
+
+@media (min-width: 601px) and (max-width: 700px) {
+  .card{
+    position: absolute;
+    left: -3px;
+    height: 1515px;
+    top: -7px;
+  }
+
+  .types{display: flex;position: relative;flex-direction: column;left: -117px;}
+
+  .card .card-title h2{
+    text-align-last: center;
+    font-size: 29px;
+    margin-right: 241px;
+  }
+
+  .card .card-body .payment-type h4{
+    position: relative;
+    bottom: 10px;
+    left: 20px;
+
+  }
+
+  .card-actions{
+    left: -408px;
+    top: 348px;
+    position: relative;
+  }
+
+  .button-primary{
+    width: 250%;
+  }
+  .d25{
+    position: relative;
+    bottom: 45px;
+    left: 53px;
+  }
+
+}
+
+
+
+/* *************************Media Querry For 760 to 830 *****f******************* */
+ 
+
+
+@media (min-width: 760px) and (max-width: 830px) {
+
+  .scanner{
+    margin-left: 69px;
+  }
+
+  .card{
+    position: absolute;
+    left: -3px;
+    height: 1515px;
+    top: -7px;
+  }
+
+  .types{display: flex;position: relative;flex-direction: column;left: -117px;}
+
+  .card .card-title h2{
+    text-align-last: center;
+    font-size: 22px;
+    margin-right: 225px;
+  }
+
+  .card .card-body .payment-type h4{
+    position: relative;
+    bottom: 10px;
+    left: 66px;
+    font-size: 22px;
+  }
+
+  .card-actions{
+    left: -412px;
+    top: 348px;
+    position: relative;
+  }
+
+  .button-primary{
+    width: 150%;
+  }
+  .d25{
+    position: relative;
+    bottom: 45px;
+    left: 9px;
+  }
+
+}
+
+
+/* *************************Media Querry For 831 to 920 *****f******************* */
+ 
+
+
+@media (min-width: 831px) and (max-width: 920px) {
+  .card{
+    position: absolute;
+    left: 50px;
+    height: 1134px;
+    top: -7px;
+  }
+
+  .card .card-title h2{
+    text-align-last: center;
+    font-size: 37px;
+    margin-right: -11px;
+  }
+
+  .card .card-body .payment-type h4{
+    position: relative;
+    bottom: 10px;
+    display: flex;
+    left: 20px;
+    justify-content: center;
+  }
+
+  .card-actions{
+    /* left: -408px; */
+    /* top: 348px; */
+    position: relative;
+  }
+
+
+  .d25{
+    position: relative;
+    /* bottom: 45px; */
+    /* left: 53px; */
+  }
+
+}
+
+
+/* *************************Media Querry For 950px to 1100px *****f******************* */
+ 
+
+
+@media (min-width: 950px) and (max-width: 1100px) {
+
+.card{
+  position: relative;
+  left: -68px;
+  bottom: 20px;
+}
+
+}
+
+
+
+
+
+
+
+  
+</style>
+</head>
+<body>
+  <!-- <video width="100%" height="100%"  autoplay muted loop class="myVideo">
+    <source src="./Assets/PaymentUI/video.mp4" type="video/mp4">
+  </video> -->
+
+  <article class="card">
+	<div class="container">
+		<div class="card-title">
+			<h2>Cybernatic 2055 Payment Methods</h2>
+		</div>
+		<div class="card-body">
+			<div class="payment-type">
+				<h4>Choose payment method below</h4>
+				<div class="types flex justify-space-between">
+					<div class="type selected">
+						<div class="logo">
+						<img class="img1" src="./Assets/PaymentUI/finger-scan.png" alt="">					</div>
+						<div class="text">
+							<p>Pay with Auto Biometric</p>
+						</div>
+					</div>
+					<div class="type">
+						<div class="logo">
+							<img class="img1" src="./Assets/PaymentUI/face-id.png" alt="">
+						</div>
+						<div class="text">
+							<p>Pay with 9D Face Id</p>
+						</div>
+					</div>
+					<div class="type">
+						<div class="logo">
+							<img class="img1" src="./Assets/PaymentUI/iris-recognition.png" alt="">
+						</div>
+						<div class="text">
+							<p>Pay with Laser Iris Scan</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="payment-info flex justify-space-between">
+				
+
+				<div class="scanner">
+					<div class="fingarprint">
+					</div>
+					<h4>Click To Proceed ....</h4>
+				</div>
+
+
+		<div class="card-actions flex justify-space-between">
+			<div class="flex-start">
+				<button class="button button-secondary"><a class="a86" href="./Gaming Shop.html"> Return to Store</a></button>
+			</div>
+			<div class="flex-end">
+				<button class="button button-link"><a class="d25" href=""> Pay With Old Payment Method : Debit Card </a></button>
+				<button class="button button-primary">Thanks For Choosing Us, Click Here To Complete Your Payment </button>
+			</div>
+		</div>
+	</div>
+</article>
+
+
+<canvas class="background"></canvas>
+<script src='https://code.jquery.com/jquery-1.11.0.min.js'></script>
+<script src='https://code.jquery.com/jquery-migrate-1.2.1.min.js'></script>
+<script>
+
+
+window.onload = function () {
+  Particles.init({
+    selector: ".background"
+  });
+};
+const particles = Particles.init({
+  selector: ".background",
+  color: ["#03dac6", "#ff0266", "#000000"],
+  connectParticles: true,
+  responsive: [
+    {
+      breakpoint: 768,
+      options: {
+        color: ["#faebd7", "#03dac6", "#ff0266"],
+        maxParticles: 43,
+        connectParticles: false
+      }
+    }
+  ]
+});
+
+
+</script>
+</body>
+</html>
